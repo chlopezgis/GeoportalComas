@@ -3,7 +3,8 @@ var map = L.map('map').setView([-11.928499721110041, -77.05091118363637], 13);
 
 /* Agregar TileLayer */
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, 
+    maxZoom: 19,
+    minZoom: 1,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
