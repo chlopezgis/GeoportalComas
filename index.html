@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="esp">
-    <head>
-        <!-- Especificar metadatos de la web -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <!-- Especificar metadatos de la web -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Titulo del Geoportal -->
-        <title>Geoportal Comas</title>
+    <!-- Titulo del Geoportal -->
+    <title>Geoportal Comas</title>
 
-        <!-- Referenciar archivos de estilos externo -->
-        <link rel="stylesheet" href="css/index.css"/>
+    <!-- Referenciar archivos de estilos externo -->
+    <link rel="stylesheet" href="css/index.css"/>
 
-        <!-- Referenciar archivo de estilos de Leaflet -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-                integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-                crossorigin=""/>
+    <!-- Referenciar archivo de estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+            crossorigin=""/>
 
-         <!-- Referenciar archivo de Script Leaflet (deber ir luego del estilo) -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-                crossorigin=""></script>
-    </head>
-    <body>
-        <!-- Etique div contenedor del mapa base -->
-        <div id="map">
-            <!-- Referencia js externo -->
-            <script src="js/index.js"></script>
-        </div>
-    </body>
-    <footer>
-    </footer>
+    <!-- Referenciar archivo de Script Leaflet (deber ir luego del estilo) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+<body>
+    <!-- Contenedor principal usando CSS Grid -->
+    <div id="container">
+        <!-- Sección donde se mostrará el listado de capas (1/5 del ancho) -->
+        <section id="layers-list">
+            <h2>Capas Disponibles</h2>
+            <ul id="layers"></ul> <!-- Aquí se insertarán las capas dinámicamente -->
+        </section>
+
+        <!-- Contenedor del mapa (4/5 del ancho) -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Referencia js externo -->
+    <script src="js/index.js"></script>
+</body>
+<footer>
+</footer>
 </html>

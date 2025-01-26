@@ -1,16 +1,51 @@
-/* Eliminar márgenes y ajusta el tamaño de la página */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+/* Establecemos el contenedor principal para usar CSS Grid */
+#container {
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* 1/5 para la lista de capas y 4/5 para el mapa */
+    height: 100vh; /* Altura completa de la ventana */
 }
 
-/* Asegurar que el contenedor del mapa use todo el espacio disponible */
+/* Estilo para la sección de capas (izquierda) */
+#layers-list {
+    padding: 20px;
+    border-right: 2px solid #ccc; /* Línea divisoria */
+    background-color: #f5f5f5;
+    overflow-y: auto; /* Permitir desplazamiento si hay muchas capas */
+}
+
+/* Estilo para el mapa (derecha) */
 #map {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    background-color: #e0e0e0; /* Color de fondo mientras se carga el mapa */
+}
+
+/* Mejorar la presentación de la lista de capas */
+#layers-list h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#layers-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#layers-list li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#layers-list button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#layers-list button:hover {
+    background-color: #45a049;
 }
