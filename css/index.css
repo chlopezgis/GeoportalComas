@@ -1,51 +1,88 @@
-/* Establecemos el contenedor principal para usar CSS Grid */
-#container {
-    display: grid;
-    grid-template-columns: 1fr 4fr; /* 1/5 para la lista de capas y 4/5 para el mapa */
-    height: 100vh; /* Altura completa de la ventana */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo para la sección de capas (izquierda) */
-#layers-list {
-    padding: 20px;
-    border-right: 2px solid #ccc; /* Línea divisoria */
-    background-color: #f5f5f5;
-    overflow-y: auto; /* Permitir desplazamiento si hay muchas capas */
-}
-
-/* Estilo para el mapa (derecha) */
-#map {
-    width: 100%;
+html, body {
     height: 100%;
-    background-color: #e0e0e0; /* Color de fondo mientras se carga el mapa */
+    font-family: Arial, sans-serif;
 }
 
-/* Mejorar la presentación de la lista de capas */
-#layers-list h2 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
-#layers-list ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#layers-list li {
-    margin: 10px 0;
+/* 📌 Header */
+#header {
+    height: 50px;
+    background-color: #2c3e50;
+    color: white;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 18px;
 }
 
-#layers-list button {
-    padding: 5px 10px;
-    cursor: pointer;
+/* Estilos para el mapa y el sidebar */
+#map {
+    position: absolute;
+    top: 50px; /* Esto coloca el mapa debajo del header */
+    left: 50px; /* El mapa empieza después del sidebar */
+    height: calc(100vh - 50px); /* El mapa ocupa toda la altura restante, excluyendo el header */
+    width: calc(100% - 50px); /* El mapa ocupa el resto del ancho disponible después del sidebar */
+}
+
+#sidebar {
+    position: absolute;
+    top: 50px; /* Esto coloca el sidebar debajo del header */
+    left: 0;
+    height: calc(100% - 50px); /* Resta la altura del header al total de la altura */
+    width: 50px;
+    background-color: rgba(64, 101, 138, 0.849);
+    padding: 10px;
+    transition: width 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+#layersPanel {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.layer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.layer-item label {
+    margin-left: 10px;
+}
+
+#layerButton {
+    margin-bottom: 10px;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
 }
 
-#layers-list button:hover {
+#layerButton:hover {
     background-color: #45a049;
+}
+
+/* Estilos para el toggleSwitch (checkbox) */
+.layer-toggle {
+    margin-right: 10px;       /* Separación del checkbox respecto al texto */
+    transform: scale(1.2);  /* Aumentar el tamaño del checkbox */
+}
+
+/* Estilo al pasar el mouse sobre el label */
+.layer-label:hover {
+    color: #4CAF50;         /* Cambia el color cuando el mouse pasa por encima */
+    cursor: pointer;       /* Cambia el cursor a puntero */
+}
+
+/* Estilo al pasar el mouse sobre el toggleSwitch */
+.layer-toggle:hover {
+    cursor: pointer;       /* Cambia el cursor a puntero cuando se pasa por encima */
 }

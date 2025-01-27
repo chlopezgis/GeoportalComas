@@ -23,17 +23,17 @@
             crossorigin=""></script>
 </head>
 <body>
-    <!-- Contenedor principal usando CSS Grid -->
-    <div id="container">
-        <!-- Sección donde se mostrará el listado de capas (1/5 del ancho) -->
-        <section id="layers-list">
-            <h2>Capas Disponibles</h2>
-            <ul id="layers"></ul> <!-- Aquí se insertarán las capas dinámicamente -->
-        </section>
 
-        <!-- Contenedor del mapa (4/5 del ancho) -->
-        <div id="map"></div>
+    <header id="header">
+        <h1>Geoportal de Comas</h1>
+    </header>
+    
+
+    <div id="sidebar">
+        <div id="layersPanel"></div>
     </div>
+
+    <div id="map"></div>
 
     <!-- Referencia js externo -->
     <script src="js/index.js"></script>
